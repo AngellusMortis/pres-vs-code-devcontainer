@@ -6,14 +6,12 @@ ENV PYTHONPATH /code/
 ENV PATH /usr/local/bin/:$PATH
 
 # create an app user to run code as
-RUN groupadd -r python --gid 1000 && useradd --no-log-init -r --uid 1000 -g python python
+RUN groupadd -r python --gid 1000 && useradd --no-log-init -r --uid 1000 -m -g python python
 RUN --mount=type=cache,mode=0755,target=/var/lib/apt/lists apt-get update && apt-get install -y git \
     # upgrade pip
     && pip install --no-cache-dir -U pip \
     # setup app user and working directory
-    && mkdir -p /code/ \
-    && mkdir -p /home/python \
-    && chown -R python:python /home/python
+    && mkdir -p /code/
 
 
 ## intermediate image to build deps
