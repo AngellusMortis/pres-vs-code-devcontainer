@@ -156,7 +156,7 @@ norecursedirs = [
     "testing_config",
     ".tox",
 ]
-addopts = "--cov=pyunifiprotect --cov-append -rP -n=auto"
+addopts = "--cov=main --cov-append --cov-report term-missing -rP"
 
 [tool.flake8]
 exclude = ".eggs, .git, .tox, dist"

@@ -6,3 +6,5 @@ pip-tools
 pylint
 pyproject-flake8
 pytest
+pytest-cov
+requests

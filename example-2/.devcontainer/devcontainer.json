@@ -36,10 +36,9 @@
         "python.testing.promptToConfigure": false,
         "python.testing.pytestEnabled": true,
         "python.testing.pytestArgs": [
-            "--cov-report=xml", // for coverage-gutters
+            "--cov-report=xml:cov.xml", // for coverage-gutters
             "--color=no",       // https://github.com/microsoft/vscode-python/issues/5767
         ],
-        "coverage-gutters.xmlname": "coverage.xml",
         "coverage-gutters.customizable.status-bar-toggler-watchCoverageAndVisibleEditors-enabled": true,
         "coverage-gutters.showLineCoverage": true,
         "terminal.integrated.defaultProfile.linux": "bash"
