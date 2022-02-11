@@ -4,7 +4,7 @@ from pydantic import BaseModel, BaseSettings, PrivateAttr
 
 
 class Config(BaseSettings):
-    redis_url: str = 'redis://redis:6379/0'
+    redis_url: str = "redis://redis:6379/0"
 
 
 class Redis(BaseModel):
@@ -14,7 +14,7 @@ class Redis(BaseModel):
     @property
     def client(self) -> aioredis.Redis:
         if self._client is None:
-            self._client = aioredis.from_url(config.redis_url, decode_responses=True)
+            self._client = aioredis.from_url(config.redis_url, decode_responses=True)  # type: ignore
 
         return self._client
 

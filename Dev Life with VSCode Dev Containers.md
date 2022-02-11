@@ -219,6 +219,33 @@ how to set up dev containers OR choose a project you have already
 worked on but set up a dev container for it from scratch!!
 -->
 
+### Git Repo
+
+https://github.com/AngellusMortis/pres-vs-code-devcontainer
+
+--
+
+### Example 1
+
+#### Add devcontainer to a Python project
+
+1. [Clone repo](https://github.com/AngellusMortis/pres-vs-code-devcontainer)
+2. Open the folder `example-1` in VS Code
+3. See branch `completed` for final result
+
+--
+
+### Example 2
+
+#### Full featured devcontainer
+
+1. [Clone repo](https://github.com/AngellusMortis/pres-vs-code-devcontainer)
+2. Open the folder `example-2` in VS Code
+3. Reopen in Container
+
+![](images/reopen.png)
+
+<!--
 Here are a few things that would be great to see.. {align=left}
 
 - Checking to see docker daemon is running
@@ -233,6 +260,7 @@ Here are a few things that would be great to see.. {align=left}
   - Creating shortcuts to easily run your project
 - Customizing project and editor settings in dev containers (based on your experience)
 - How to add additional software to the base image?
+-->
 
 ---
 

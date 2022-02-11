@@ -7,12 +7,12 @@ from main import app
 
 
 @pytest.fixture(name="client")
-def client_fixture():
-    yield TestClient(app)
+def client_fixture() -> TestClient:
+    return TestClient(app)
 
 
 @patch("main.redis")
-def test_root(redis, client):
+def test_root(redis, client: TestClient) -> None:
     redis.client.incr = AsyncMock(return_value=1)
 
     response = client.get("/")
@@ -20,6 +20,6 @@ def test_root(redis, client):
     assert response.json() == {"message": "Good News Everyone!", "count": 1}
 
 
-def test_healthcheck(client):
+def test_healthcheck(client: TestClient) -> None:
     response = client.get("/healthcheck/")
     assert response.status_code == 200
