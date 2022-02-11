@@ -1,0 +1,3 @@
+aioredis
+fastapi<1
+uvicorn

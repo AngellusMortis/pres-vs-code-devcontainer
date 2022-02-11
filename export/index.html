@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Dev Life w/ VSCode Dev Containers</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="http://localhost:63800/libs/reveal.js/4.1.3/reset.css">
+	<link rel="stylesheet" href="http://localhost:63800/libs/reveal.js/4.1.3/reveal.css">
+
+	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	  <!-- highlight Theme -->
+  	
+	  <link rel="stylesheet" href="http://localhost:63800/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
+	
+	
+		
+	<link rel="stylesheet" href="http://localhost:63800/libs/reveal.js/4.1.3/plugin/chalkboard/style.css">
+	
+	
+	
+		<link rel="stylesheet" href="http://localhost:63800/libs/reveal.js/4.1.3/plugin/customcontrols/style.css">
+	
+	<link rel="stylesheet" href="http://localhost:63800/libs/styles/tasklist.css">
+
+
+
+  <!-- Revealjs Theme -->
+  
+  	<link rel="stylesheet" href="http://localhost:63800/libs/reveal.js/4.1.3/theme/moon.css" id="theme">
+  
+  
+
+
+  <!-- Revealjs Theme -->
+  
+
+ 
+</head>
+
+<body>
+  
+    <div id="logo" style="position: fixed; top: 20px; left: 20px; z-index: 1; height:3rem;">
+        <img src="images/logo.png" style="height:100%"/>
+    </div>
+  
+
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+        <section data-background="linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.65)), url(images/background-rect.jpeg)">
+            
+            <h2>Dev Life w/ VSCode Dev Containers</h2>
+<!-- .slide: data-background="linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.65)), url(images/background-rect.jpeg)" -->
+<p style="color:#A0A603;background:#0D0D0D">Christopher Bailey</p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Agenda</h2>
+<ol>
+<li>Intro</li>
+<li>The What and Why</li>
+<li>Getting started w/ Dev Containers</li>
+<li>Demo</li>
+<li>Lessons Learned</li>
+</ol>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <!-- Intro -->
+<p align="left" style="width:400px;position:absolute"><img src="images/logo.png" alt=""></p>
+<div align="right" class="">
+<p><br><br></p>
+<p>Christopher Bailey</p>
+<p style="color:#A0A603;background:#0D0D0D;width:400px;padding:10px"><em>Site Reliability Engineer @<a href="http://">CompanyX</a></em> </p>
+<p><br><br></p>
+<pre><code class="language-text">Talk about yourself here:
+ - Where you work?
+ - What you do?
+ - Anything else you want the audience to know about you.
+</code></pre>
+</div>
+
+            </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2>What are Dev Containers</h2>
+<pre><code class="language-text">First talk about what containers are at a high level. Here is 
+quick blurb about that
+</code></pre>
+<blockquote>
+<p><a href="https://www.docker.com/resources/what-container">Containers</a> are pieces of software that package code and all of the dependencies that code needs to run, including the runtime, tools, libraries, and settings.</p>
+</blockquote>
+
+            </section>
+        
+            <section >
+                <blockquote>
+<p>When you create a container, its initial contents come from what’s known as an <strong>image</strong>. An image can be thought of as a mini-disk drive with things like the operating system and other tools pre-installed. You describe what goes into the image using a Dockerfile, and once you run the image, it becomes a container.</p>
+</blockquote>
+
+            </section>
+        
+            <section >
+                <pre><code class="language-text">Here is a diagram to help you with your explanation
+</code></pre>
+<p><img src="https://code.visualstudio.com/assets/blogs/2020/07/27/1-containers-abc.png" alt="" align="center" style="width:600px"></p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2>Why Dev Containers</h2>
+<pre><code class="language-text">This is a great point to talk about why YOU use dev containers 
+and how it has changed programming for you. 
+</code></pre>
+<blockquote>
+<p>Dev containers provide a separate coding environment from your computer which allows you to have a consistent build and development environment</p>
+</blockquote>
+
+            </section>
+        
+            <section >
+                <pre><code class="language-text">Here are some other points for using dev containers. 
+Taken from this dev.to blog 
+https://dev.to/mcastellin/hands-on-with-vscode-dev-containers-33bf
+</code></pre>
+<p align="left">There are several advantages of using dev containers…</p>
+<ul>
+<li>
+<p><strong>Compatibility</strong>: Your code runs in the exact same environment from your development machine all the way to production</p>
+</li>
+<li>
+<p><strong>Automation &amp; Speed</strong>: The creation of a new dev environment is fully automated. You can restore a broken environment (or onboard a new developer) in seconds</p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <ul>
+<li>
+<p><strong>PR Review</strong>: You can check out the code from a PR in a new, isolated container without messing with your work</p>
+</li>
+<li>
+<p><strong>It’s CLEAN!</strong> I have tons of small projects on my laptop that I can’t even find anymore. With dev containers I could: checkout a project -&gt; build a dev container -&gt; develop and commit my changes -&gt; destroy it immediately</p>
+</li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2>Getting Started</h2>
+<pre><code class="language-text">Here talk about some of the things one 
+will need to know or be comfortable with to start using dev containers 
+and be effective. Here is an example
+</code></pre>
+<p>Some things you’ll need to know</p>
+<ul>
+<li>
+<p>Basic knowledge of software development, such as what it means to run code and install a new language</p>
+</li>
+<li>
+<p>Docker and basic Docker knowledge (familiarity with the concept of images, containers, and registries).</p>
+</li>
+<li>
+<p>Git and basic knowledge of GitHub, such as what a repository is</p>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h3>Prerequisites</h3>
+<pre><code class="language-text">Add whatever you think is missing here
+</code></pre>
+<ul>
+<li>Install Visual Studio Code.</li>
+<li>Install Docker and Docker Daemon is running.</li>
+<li>Install VS Code’s “Remote - Containers” extension</li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2>Demo Time</h2>
+<p><img src="https://media.giphy.com/media/u2pmTWUi0MXjyrMaVj/giphy.gif" alt=""></p>
+
+            </section>
+        
+            <section >
+                <pre><code class="language-text">Here is where the fun part begins. 
+You can choose a new simple project to showcase 
+how to set up dev containers OR choose a project you have already 
+worked on but set up a dev container for it from scratch!!
+</code></pre>
+<p align="left">Here are a few things that would be great to see…</p>
+<ul>
+<li>Checking to see docker daemon is running</li>
+<li>Installing Remote container extension</li>
+<li>How to add a dev container to an existing project?
+<ul>
+<li>Talk about the devcontainer.json</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <ul>
+<li>How to run a project with a dev container set up?
+<ul>
+<li>Forwarding ports</li>
+<li>Creating shortcuts to easily run your project</li>
+</ul>
+</li>
+<li>Customizing project and editor settings in dev containers (based on your experience)</li>
+<li>How to add additional software to the base image?</li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Lessons Learned</h2>
+<pre><code class="language-text">Here it would be nice if you could share some 
+of the lessons you learnt while using dev containers.
+
+* What are some of the things you had issue wrapping your head around
+* What are some cool tips and tricks you learnt
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>The END</h2>
+<p><em>Thanks</em></p>
+
+            </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  	
+	<script src="http://localhost:63800/libs/reveal.js/4.1.3/reveal.js"></script>
+	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/zoom/zoom.js"></script>
+	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/notes/notes.js"></script>
+	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/search/search.js"></script>
+	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/markdown/markdown.js"></script>
+	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/highlight/highlight.js"></script>
+	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/menu/menu.js"></script>
+	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/math/math.js"></script>
+
+	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/fullscreen/plugin.js"></script>
+  
+  	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/animate/plugin.js"></script>
+  	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/animate/svg.min.js"></script>
+  
+  	 <!--	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/anything/plugin.js"></script> -->
+
+ <!--	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/chalkboard/plugin.js"></script>
+	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/customcontrols/plugin.js"></script>
+	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/embed-tweet/plugin.js"></script>
+
+	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/chart/chart.min.js"></script>
+	<script src="http://localhost:63800/libs/reveal.js/4.1.3/plugin/chart/plugin.js"></script>
+
+  <script>
+
+		const printPlugins = [
+			RevealNotes, 
+			RevealHighlight,
+			RevealMath,
+			RevealAnimate,
+			RevealChalkboard, 
+			RevealEmbedTweet,
+			RevealChart,
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				RevealMenu, 
+				RevealFullscreen,
+				//RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				RevealCustomControls, 
+				// poll
+				// question
+				// seminar
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsBackArrows: 'faded',
+			progress: true,
+			slideNumber: false,
+			//#showSlideNumber "all" "print" "speaker"
+			hash: true,//#  hash: false,
+			//# respondToHashChanges: true,
+			//# history: false,
+			keyboard: true,
+			//#keyboardCondition: null,
+			overview: true,
+			center: true,
+			touch: true,
+			loop: false,
+			rtl: false,
+			//#navigationMode: 'default', linear grid
+			shuffle: false,
+			fragments: true,
+			fragmentInURL: false,
+			embedded: false,
+			help: true,
+			//#pause: true
+			showNotes: false,
+			autoPlayMedia: false, // TODO fix this to a nullable value
+			//#preloadIframes: null. true false
+			//#autoAnimate: true
+			//#autoAnimateMatcher: null,
+			//#autoAnimateEasing: 'ease',
+			//autoAnimateDuration: 1.0,
+			//#autoAnimateUnmatched: true
+			//#autoAnimateStyles: []
+			autoSlide: 0, // TODO fix this to a falseable value
+			autoSlideStoppable: true,
+			autoSlideMethod: '0',
+			defaultTiming: 120,
+			mouseWheel: false,
+			//#previewLinks: false
+			//#postMessage: true,  // TODO : this can cause issues with the vscode api ???
+			//#postMessageEvents: false,
+			//#focusBodyOnPageVisibilityChange: true,
+			transition: 'slide',
+			transitionSpeed: 'default',
+			backgroundTransition: 'fade',
+			//#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+			//#pdfSeparateFragments: true,
+			//#pdfPageHeightOffset: -1,
+			viewDistance: 3,
+			//#mobileViewDistance: 2,
+			display: 'block',
+			//#hideInactiveCursor: true,
+			//#hideCursorTime: 5000
+
+			// Parallax Background
+			parallaxBackgroundImage: '',
+			parallaxBackgroundSize: '',
+			parallaxBackgroundHorizontal: 0,
+			parallaxBackgroundVertical: 0,
+			
+			//Presentation Size
+			width: 960,
+			height: 700,
+			margin: 0.04,
+			minScale: 0.2,
+			maxScale: 2,
+			disableLayout: false,
+
+			audio: {
+				prefix: 'audio/', 	// audio files are stored in the "audio" folder
+				suffix: '.ogg',		// audio files have the ".ogg" ending
+				textToSpeechURL: null,  // the URL to the text to speech converter
+				defaultNotes: false, 	// use slide notes as default for the text to speech converter
+				defaultText: false, 	// use slide text as default for the text to speech converter
+				advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+				autoplay: false,	// automatically start slideshow
+				defaultDuration: 5,	// default duration in seconds if no audio is available
+				defaultAudios: true,	// try to play audios with names such as audio/1.2.ogg
+				playerOpacity: 0.05,	// opacity value of audio player if unfocused
+				playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+				startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+			},
+			
+			chalkboard: { // font-awesome.min.css must be available
+					//src: "chalkboard/chalkboard.json",
+					storage: "chalkboard-demo",
+				},
+			
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+						{ icon: '<i class="fa fa-pen-square"></i>',
+						  title: 'Toggle chalkboard (B)',
+						  action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+						  title: 'Toggle notes canvas (C)',
+						  action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+		
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.112.0/containers/docker-existing-docker-compose
+// If you want to run as a non-root user in the container, see .devcontainer/docker-compose.yml.
+{
+    "name": "Example 2",
+    // Update the 'dockerComposeFile' list if you have more compose files or use different names.
+    // The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
+    "dockerComposeFile": [
+        "../docker-compose.yml",
+        "docker-compose.vscode.yml",
+    ],
+    // The 'service' property is the name of the service for the container that VS Code should
+    // use. Update this value and .devcontainer/docker-compose.yml to the real service name.
+    "service": "web",
+    // The optional 'workspaceFolder' property is the path VS Code should open by default when
+    // connected. This is typically a file mount in .devcontainer/docker-compose.yml
+    "workspaceFolder": "/code",
+    // Set *default* container specific settings.json values on container create.
+    "settings": {
+        "editor.formatOnSave": false,
+        "editor.insertSpaces": true,
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true,
+        "python.analysis.openFilesOnly": false,
+        "python.linting.enabled": true,
+        "python.linting.flake8Enabled": true,
+        "python.linting.flake8Path": "/usr/local/bin/pflake8",
+        "python.linting.pylintEnabled": true,
+        "python.linting.banditEnabled": false,
+        "python.linting.pylamaEnabled": false,
+        "python.sortImports.args": [
+            "--settings-path=${workspaceFolder}/pyproject.toml"
+        ],
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.pythonPath": "/usr/local/bin/python",
+        "python.testing.promptToConfigure": false,
+        "python.testing.pytestEnabled": true,
+        "python.testing.pytestArgs": [
+            "--cov-report=xml", // for coverage-gutters
+            "--color=no",       // https://github.com/microsoft/vscode-python/issues/5767
+        ],
+        "coverage-gutters.xmlname": "coverage.xml",
+        "coverage-gutters.customizable.status-bar-toggler-watchCoverageAndVisibleEditors-enabled": true,
+        "coverage-gutters.showLineCoverage": true,
+        "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "eamodio.gitlens",
+        "ryanluker.vscode-coverage-gutters",
+        "bungcip.better-toml",
+        "ms-azuretools.vscode-docker",
+    ],
+    // Uncomment the next line if you want start specific services in your Docker Compose config.
+    "runServices": [
+        "web",
+    ],
+    // Uncomment the next line if you want to keep your containers running after VS Code shuts down.
+    // "shutdownAction": "none",
+    // Uncomment the next line to run commands after the container is created - for example installing git.
+    // "postAttachCommand": "cp /code/.devcontainer/bashrc /home/python/.bashrc",
+    // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+    "remoteUser": "python",
+    "forwardPorts": [
+        8000
+    ],
+}

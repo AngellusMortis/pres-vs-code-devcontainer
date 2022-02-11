@@ -1,0 +1,8 @@
+black
+flake8
+isort
+mypy
+pip-tools
+pylint
+pyproject-flake8
+pytest
