@@ -252,9 +252,6 @@ Here are a few things that would be great to see.. {align=left}
 - Installing Remote container extension
 - How to add a dev container to an existing project?
   - Talk about the devcontainer.json
-
---
-
 - How to run a project with a dev container set up?
   - Forwarding ports
   - Creating shortcuts to easily run your project
@@ -274,8 +271,11 @@ of the lessons you learnt while using dev containers.
 * What are some cool tips and tricks you learnt
 -->
 
+- Learn Docker / Containers
+- Get your devcontainer.json right
+
 ---
 
-## The END
+### The END
 
-*Thanks*
+#### Thanks
